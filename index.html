@@ -1,76 +1,132 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For Mariam ❤️</title>
+<title>For Mariam ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+#siteFrame {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    display: none;
+
+    z-index: 10;
+
+    background: #18001f;
+
+}
+
+#backgroundMusic {
+
+    display: none;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <div class="login-box">
+<div class="login-box">
 
-        <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
 
-        <h1>Our Little Secret</h1>
+    <h1>Our Little Secret</h1>
 
-        <p>Only Mariam can enter ✨</p>
+    <p>Only Mariam can enter ✨</p>
 
-        <input
-            type="text"
-            id="username"
-            placeholder="Username"
-        >
+    <input
+        type="text"
+        id="username"
+        placeholder="Username"
+    >
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Password"
-        >
+    <input
+        type="password"
+        id="password"
+        placeholder="Password"
+    >
 
-        <button onclick="login()">
-            Enter Our World ❤️
-        </button>
+    <button onclick="login()">
+        Enter Our World ❤️
+    </button>
 
-        <p id="error"></p>
+    <p id="error"></p>
 
-    </div>
+</div>
 
 
-    <script>
+<audio id="backgroundMusic" loop>
 
-          function login() {
+    <source src="music/song.mp3" type="audio/mpeg">
 
-            const username =
-                document.getElementById("username").value;
+</audio>
 
-            const password =
-                document.getElementById("password").value;
-            if (username === "memo" && password === "27072026") {
 
-              localStorage.setItem("musicStarted", "true");
+<iframe
+    id="siteFrame"
+    src="about:blank">
+</iframe>
 
-             window.location.href = "mariam.html";
 
-} else {
+<script>
 
-    document.getElementById("error").innerText =
-        "Oops! That's not our secret 😏❤️";
+function login() {
+
+    const username =
+        document.getElementById("username").value;
+
+    const password =
+        document.getElementById("password").value;
+
+    if (username === "memo" && password === "27072026") {
+
+        const music =
+            document.getElementById("backgroundMusic");
+
+        music.volume = 0.5;
+
+        music.play();
+
+        document.querySelector(".login-box").style.display = "none";
+
+        const frame =
+            document.getElementById("siteFrame");
+
+        frame.src = "mariam.html";
+
+        frame.style.display = "block";
+
+    } else {
+
+        document.getElementById("error").innerText =
+            "Oops! That's not our secret 😏❤️";
+
+    }
 
 }
-        }
 
-        localStorage.removeItem("musicStarted");
+</script>
 
-    </script>
-  
 </body>
 
 </html>
