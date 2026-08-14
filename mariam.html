@@ -44,6 +44,22 @@
 
     </div>
 
+<audio id="backgroundMusic" controls loop>
+    <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const music = document.getElementById("backgroundMusic");
+
+    if (localStorage.getItem("musicStarted") === "true") {
+        music.volume = 0.5;
+        music.play().catch(error => {
+            console.log("Music could not autoplay:", error);
+        });
+    }
+    
+</script>
+    
 </body>
 
 </html>
