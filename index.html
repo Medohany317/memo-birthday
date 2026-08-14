@@ -46,30 +46,31 @@
 
     <script>
 
-        function login() {
+          function login() {
 
             const username =
                 document.getElementById("username").value;
 
             const password =
                 document.getElementById("password").value;
+            if (username === "memo" && password === "27072026") {
 
-            if (username === "i love u" && password === "27072026") {
+              localStorage.setItem("musicStarted", "true");
 
-                alert("Welcome to our world, Mariam ❤️");
-                window.location.href = "mariam.html";
+             window.location.href = "mariam.html";
 
-            } else {
+} else {
 
-                document.getElementById("error").innerText =
-                    "Oops! That's not our secret 😏❤️";
+    document.getElementById("error").innerText =
+        "Oops! That's not our secret 😏❤️";
 
-            }
-
+}
         }
 
-    </script>
+        localStorage.removeItem("musicStarted");
 
+    </script>
+  
 </body>
 
 </html>
