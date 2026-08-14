@@ -1,0 +1,1283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ff4f9a 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #7c3aed 0%, transparent 30%),
+        linear-gradient(135deg, #100014, #26002f, #08000d);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body::before {
+    content: "❤️ ✨ 💕 ❤️ ✨ 💕 ❤️ ✨";
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    font-size: 30px;
+    opacity: 0.15;
+    letter-spacing: 30px;
+    animation: float 8s infinite linear;
+}
+
+body::after {
+    content: "💕 ❤️ ✨ 💕 ❤️ ✨";
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    font-size: 30px;
+    opacity: 0.15;
+    letter-spacing: 25px;
+    animation: float 10s infinite linear reverse;
+}
+
+.login-box {
+    width: 90%;
+    max-width: 420px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 0 30px rgba(255, 0, 128, 0.3),
+        inset 0 0 30px rgba(255, 255, 255, 0.03);
+}
+
+.heart {
+    font-size: 55px;
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.login-box h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 10px #ff4f9a,
+        0 0 25px #ff4f9a;
+}
+
+.login-box > p {
+    color: #ffc9e5;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+
+    padding: 16px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: rgba(0,0,0,0.25);
+
+    color: white;
+
+    font-size: 16px;
+
+    text-align: center;
+}
+
+input::placeholder {
+    color: #e9c4d9;
+}
+
+input:focus {
+    border-color: #ff4f9a;
+
+    box-shadow:
+        0 0 15px rgba(255,79,154,0.5);
+}
+
+button {
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #ff2f92,
+        #9b4dff
+    );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 20px rgba(255,47,146,0.4);
+}
+
+button:hover {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 0 35px rgba(255,47,146,0.8);
+}
+
+#error {
+    margin-top: 20px;
+
+    color: #ff9bc7;
+
+    font-size: 15px;
+}
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .login-box {
+        padding: 35px 25px;
+    }
+
+    .login-box h1 {
+        font-size: 28px;
+    }
+
+}
+/* =========================
+   MARIAM INTRO PAGE ❤️
+========================= */
+
+.mariam-page {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ff3d91 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #713cff 0%, transparent 35%),
+        linear-gradient(135deg, #120016, #2b0035, #09000f);
+
+    overflow-x: hidden;
+}
+
+
+/* Main box */
+
+.mariam-container {
+    width: min(90%, 600px);
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 30px rgba(255, 55, 150, 0.25),
+        0 0 80px rgba(120, 50, 255, 0.15);
+
+    animation: fadeIn 1.2s ease;
+}
+
+
+/* Heart */
+
+.heart {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* Title */
+
+.mariam-container h1 {
+    margin: 10px 0;
+
+    font-size: 48px;
+
+    text-shadow:
+        0 0 10px #ff4f9a,
+        0 0 25px #ff4f9a;
+}
+
+
+/* Intro */
+
+.intro {
+    font-size: 20px;
+
+    color: #ffd4e8;
+
+    margin-bottom: 30px;
+}
+
+
+/* Mariam photo */
+
+.mariam-photo {
+    width: 260px;
+    height: 320px;
+
+    margin: 0 auto 30px;
+
+    border-radius: 25px;
+
+    padding: 5px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f9a,
+        #a855f7
+    );
+
+    box-shadow:
+        0 0 25px rgba(255, 79, 154, 0.5),
+        0 0 60px rgba(168, 85, 247, 0.25);
+}
+
+.mariam-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    display: block;
+}
+
+
+/* Messages */
+
+.message {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #ffe5f0;
+
+    margin: 15px auto;
+
+    max-width: 500px;
+}
+
+.message.small {
+    font-size: 16px;
+
+    color: #ffc5df;
+}
+
+
+/* Button */
+
+.story-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        #ff2693,
+        #9b4dff
+    );
+
+    box-shadow:
+        0 0 20px rgba(255, 38, 147, 0.5);
+
+    transition: 0.3s;
+}
+
+.story-button:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 30px rgba(255, 38, 147, 0.8);
+}
+
+
+/* Animations */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .mariam-container {
+        padding: 35px 20px;
+    }
+
+    .mariam-container h1 {
+        font-size: 38px;
+    }
+
+    .mariam-photo {
+        width: 220px;
+        height: 280px;
+    }
+}
+/* =========================
+   MEMORIES PAGE ❤️
+========================= */
+
+.memories-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 60px 20px 100px;
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(circle at 15% 15%, #ff3d91 0%, transparent 28%),
+        radial-gradient(circle at 85% 80%, #713cff 0%, transparent 32%),
+        linear-gradient(135deg, #16001d, #2b0038, #0d0012);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    display: block;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.memories-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.memories-header .small-heart {
+    font-size: 45px;
+}
+
+.memories-header h1 {
+    font-size: 48px;
+    margin: 10px 0;
+
+    text-shadow:
+        0 0 10px #ff4f9a,
+        0 0 25px #ff4f9a;
+}
+
+.memories-header p {
+    font-size: 19px;
+    color: #ffd6ec;
+}
+
+.memories-header .flip-hint {
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+
+/* =========================
+   MEMORIES CONTAINER
+========================= */
+
+.memory-grid {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* =========================
+   MEMORY CARD
+========================= */
+
+.memory-card {
+    width: 100%;
+    max-width: 500px;
+    height: 320px;
+
+    position: relative;
+
+    perspective: 1200px;
+
+    cursor: pointer;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   CARD INNER
+========================= */
+
+.memory-card-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.9s ease;
+}
+
+
+/* =========================
+   FLIP ON HOVER ❤️
+========================= */
+
+.memory-card:hover .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================
+   FRONT + BACK
+========================= */
+
+.memory-front,
+.memory-back {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 28px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    backface-visibility: hidden;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   FRONT
+========================= */
+
+.memory-front {
+
+    background: #24102d;
+
+    border: 2px solid rgba(255, 79, 154, 0.7);
+
+    box-shadow:
+        0 0 30px rgba(255, 47, 146, 0.35);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.memory-front img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 26px;
+}
+
+
+/* =========================
+   DARK GRADIENT
+========================= */
+
+.memory-front::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            transparent 55%
+        );
+
+    border-radius: 26px;
+}
+
+
+/* =========================
+   IMAGE TITLE
+========================= */
+
+.memory-front h3 {
+
+    position: absolute;
+
+    bottom: 25px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    z-index: 2;
+
+    font-size: 28px;
+
+    margin: 0;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px black,
+        0 0 20px #ff4f9a;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.memory-back {
+
+    transform: rotateY(180deg);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #48123f,
+            #30105b
+        );
+
+    border: 2px solid rgba(255, 79, 154, 0.7);
+
+    box-shadow:
+        0 0 35px rgba(168, 85, 247, 0.35);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   BACK TITLE
+========================= */
+
+.memory-back h3 {
+
+    flex-shrink: 0;
+
+    font-size: 28px;
+
+    margin: 0 0 12px;
+
+    color: white;
+
+    text-shadow:
+        0 0 12px #ff4f9a;
+}
+
+
+/* =========================
+   BACK MESSAGE
+========================= */
+
+.memory-back p {
+
+    width: 100%;
+
+    max-width: 450px;
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 0 12px 5px;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #ffe1ef;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #ff4f9a transparent;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.memory-back p::-webkit-scrollbar {
+    width: 4px;
+}
+
+.memory-back p::-webkit-scrollbar-thumb {
+    background: #ff4f9a;
+    border-radius: 10px;
+}
+
+.memory-back p::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.memories-footer {
+
+    text-align: center;
+
+    margin-top: 70px;
+
+    font-size: 18px;
+
+    color: #ffc9e3;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.memories-button {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2f92,
+            #9b4dff
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 20px rgba(255, 47, 146, 0.6);
+
+    transition: 0.3s ease;
+}
+
+.memories-button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 35px rgba(255, 47, 146, 0.9);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .memories-page {
+
+        padding: 40px 15px 70px;
+    }
+
+    .memories-header {
+
+        margin-bottom: 45px;
+    }
+
+    .memories-header h1 {
+
+        font-size: 38px;
+    }
+
+    .memory-grid {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        gap: 35px;
+    }
+
+    .memory-card {
+
+        width: 100%;
+
+        max-width: 500px;
+
+        height: 380px;
+    }
+
+    .memory-front,
+    .memory-back {
+
+        border-radius: 24px;
+
+        padding: 30px 20px;
+    }
+
+    .memory-front img {
+
+        border-radius: 22px;
+    }
+
+    .memory-back h3 {
+
+        font-size: 25px;
+    }
+
+    .memory-back p {
+
+        font-size: 17px;
+    }
+}
+
+/* Special image sizes for Memory 2, 3 and 5 */
+
+.memory-img-2,
+.memory-img-3,
+.memory-img-5 {
+    object-fit: contain !important;
+    padding: 15px;
+}
+
+.memory-img-2,
+.memory-img-3,
+.memory-img-4,
+.memory-img-5,
+.memory-img-6 {
+    object-fit: contain !important;
+    padding: 15px;
+}
+
+/* Beautiful background for portrait/smaller memories */
+
+.memory-img-2,
+.memory-img-3,
+.memory-img-4,
+.memory-img-5,
+.memory-img-6 {
+    object-fit: contain !important;
+    padding: 15px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 79, 154, 0.25),
+            transparent 65%
+        ),
+        linear-gradient(
+            135deg,
+            #18001f,
+            #3a1045,
+            #17001d
+        );
+
+    border-radius: 26px;
+
+    box-shadow:
+        inset 0 0 35px rgba(255, 79, 154, 0.15);
+}
+
+/* =========================
+   SECRET MESSAGE PAGE 💌
+========================= */
+
+.secret-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 60px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 79, 154, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(124, 58, 237, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #100014,
+            #26002f,
+            #08000d
+        );
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* Main container */
+
+.secret-container {
+    width: min(90%, 650px);
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 0 40px rgba(255, 47, 146, 0.25),
+        0 0 100px rgba(124, 58, 237, 0.15);
+
+    box-sizing: border-box;
+}
+
+
+/* Heart */
+
+.secret-heart {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* Title */
+
+.secret-container h1 {
+    font-size: 42px;
+
+    margin: 10px 0 15px;
+
+    text-shadow:
+        0 0 10px #ff4f9a,
+        0 0 25px #ff4f9a;
+}
+
+
+/* Intro */
+
+.secret-intro {
+    font-size: 19px;
+
+    color: #ffd4e8;
+
+    margin-bottom: 30px;
+}
+
+
+/* Open button */
+
+#openMessage {
+    width: auto;
+
+    padding: 16px 35px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2f92,
+            #9b4dff
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px rgba(255, 47, 146, 0.5);
+
+    transition: 0.3s ease;
+}
+
+#openMessage:hover {
+    transform: scale(1.07);
+
+    box-shadow:
+        0 0 40px rgba(255, 47, 146, 0.8);
+}
+
+
+/* Secret message */
+
+.secret-message {
+    display: none;
+
+    margin-top: 30px;
+
+    opacity: 0;
+}
+
+.secret-message.show {
+    display: block;
+
+    animation: secretReveal 2s ease forwards;
+}
+
+
+/* Message title */
+
+.secret-message h2 {
+    font-size: 35px;
+
+    margin-bottom: 25px;
+
+    color: white;
+
+    text-shadow:
+        0 0 12px #ff4f9a,
+        0 0 25px #ff4f9a;
+}
+
+
+/* Message text */
+
+.secret-message p {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #ffe1ef;
+
+    white-space: pre-line;
+}
+
+
+/* Important love text */
+
+.love-text {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    font-size: 28px;
+
+    color: #ff8fc4;
+
+    text-shadow:
+        0 0 15px #ff4f9a;
+
+    animation: loveGlow 2s infinite alternate;
+}
+
+
+/* Final heart */
+
+.final-heart {
+    margin-top: 30px;
+
+    font-size: 45px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* Made with love */
+
+.made-with-love {
+    margin-top: 20px;
+
+    font-size: 14px !important;
+
+    color: #d9a9c7 !important;
+
+    opacity: 0.8;
+}
+
+
+/* Reveal animation */
+
+@keyframes secretReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Love glow */
+
+@keyframes loveGlow {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .secret-page {
+        padding: 35px 15px;
+    }
+
+    .secret-container {
+        width: 95%;
+
+        padding: 40px 22px;
+    }
+
+    .secret-container h1 {
+        font-size: 32px;
+    }
+
+    .secret-message h2 {
+        font-size: 29px;
+    }
+
+    .secret-message p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .love-text {
+        font-size: 24px;
+    }
+}
+
+/* =========================
+   SECRET BUTTON 💌
+========================= */
+
+.secret-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2f92,
+            #9b4dff
+        );
+
+    box-shadow:
+        0 0 25px rgba(255, 47, 146, 0.5);
+
+    transition: 0.3s ease;
+}
+
+.secret-button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 40px rgba(255, 47, 146, 0.85);
+}

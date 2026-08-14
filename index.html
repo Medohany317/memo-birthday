@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Mariam ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <div class="heart">❤️</div>
+
+        <h1>Our Little Secret</h1>
+
+        <p>Only Mariam can enter ✨</p>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Username"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+
+        <button onclick="login()">
+            Enter Our World ❤️
+        </button>
+
+        <p id="error"></p>
+
+    </div>
+
+
+    <script>
+
+        function login() {
+
+            const username =
+                document.getElementById("username").value;
+
+            const password =
+                document.getElementById("password").value;
+
+            if (username === "i love u" && password === "27072026") {
+
+                alert("Welcome to our world, Mariam ❤️");
+                window.location.href = "mariam.html";
+
+            } else {
+
+                document.getElementById("error").innerText =
+                    "Oops! That's not our secret 😏❤️";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
